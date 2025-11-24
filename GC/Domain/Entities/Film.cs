@@ -1,6 +1,6 @@
 ﻿namespace GC.Domain.Entities
 {
-    public class Movie
+    public class Movie: IDisposable
     {
 
         public double Duration {  get; set; }
@@ -20,6 +20,11 @@
             Console.WriteLine($"You are watching Movie {Title}");
             Console.WriteLine($"Duration: {Duration}");
         }
+        public void Dispose()
+        {
+            Console.WriteLine("Movie disposed manually!");
+        }
+
         ~Movie()
         {
             Console.WriteLine("Movie was removed!");

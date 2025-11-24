@@ -22,6 +22,10 @@
         {
             Console.WriteLine($"Name {Title}\nGenre {Genre}\nDuration {Duration}\nCount of Actors {CountOfActors}");
         }
+        ~Show()
+        {
+            Console.WriteLine("By GC");
+        }
        public void Dispose()
         {
             Console.WriteLine("Disposed");
